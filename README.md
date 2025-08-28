@@ -5,7 +5,7 @@ Este proyecto corresponde a una aplicación web desarrollada como parte de una a
 ## 🚀 Despliegue
 
 La aplicación está disponible públicamente en GitHub Pages:  
-🔗 [Acceder a la aplicación](https://tu-enlace.github.io)
+🔗 [Acceder a la aplicación](https://aiep-folder.github.io/ficha-medica/)
 
 ## 🛠️ Tecnologías utilizadas
 
