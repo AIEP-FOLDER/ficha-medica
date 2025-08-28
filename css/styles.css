@@ -1,7 +1,7 @@
 :root {
   --azul-clinico: #0077b6;
-  --azul-claro: #caf0f8;
-  --azul-intermedio: #90e0ef;
+  --azul-claro: #1A1C2C;
+  --azul-intermedio: #1A1C2C;
   --gris: #6b7280;
   --blanco: #ffffff;
   --negro: #000;
@@ -30,7 +30,7 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: 0;
-  background: radial-gradient(125% 125% at 50% 10%, #fff 40%, #6366f1 100%);
+  background: radial-gradient(125% 125% at 50% 10%, #1A1C2C 40%, #6366f1 100%);
   pointer-events: none;
 }
 body > div {
@@ -41,8 +41,8 @@ body > div {
 .header {
   text-align: center;
   padding: 1.5rem 0rem;
-  background: linear-gradient(to bottom, var(--azul-clinico), var(--blanco));
-  color: var(--negro);
+  background: linear-gradient(to bottom, var(--azul-clinico), var(#1A1C2C));
+  color: var(--blanco);
 }
 .header > h1{
   font-size: 2rem;
@@ -204,9 +204,9 @@ th {
 .footer {
   padding: 1.5rem 1rem;
   text-align: center;
-  color: var(--negro);
+  color: var(--blanco);
   
-  background: linear-gradient(to top, #1783BD, #999BF6);
+  background: linear-gradient(to top, #1A1C2C, #484AA8);
 }
 
 @media (max-width:720px) {
