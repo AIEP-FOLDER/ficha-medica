@@ -10,14 +10,15 @@
   --borde: #e5e7eb;
 }
 
-html, body {
+html,
+body {
   height: auto;
   min-height: 100%;
   width: 100%;
   overflow-x: hidden;
 }
 
-body > div.div-main {
+body>div.div-main {
   position: relative;
   z-index: 1;
   width: 100%;
@@ -30,10 +31,11 @@ body > div.div-main {
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  
+
   color: #111827;
   background: var(--blanco);
 }
+
 body::before {
   content: "";
   position: fixed;
@@ -41,37 +43,49 @@ body::before {
   z-index: 0;
   pointer-events: none;
 }
-body > div {
+
+body>div {
   position: relative;
   z-index: 1;
 }
 
-.nav_principal{
+.nav_principal {
+  background: var(--azul-clinico);
+  color: white;
+  padding: 1rem 0;
+}
+
+.nav_container {
+  max-width: 1200px;
+  /* Puedes ajustar a 960px, 1140px, etc. */
+  margin: 0 auto;
+  padding: 0 1rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
-  background: var(--azul-clinico);
-  color: white;
   gap: 1rem;
-
 }
-.nav_principal >h1 {
+
+
+.nav_principal>h1 {
   margin: 0 !important;
 }
-.navbar-logo{
+
+.navbar-logo {
   width: 50px;
   border-radius: 100%;
-  
+
 }
-.search-btn{
+
+.search-btn {
   background-color: transparent !important;
   border: 0;
   color: var(--azul-clinico);
   cursor: pointer;
 }
-.search-option{
+
+.search-option {
   display: flex;
   align-items: center;
   justify-items: center;
@@ -85,15 +99,17 @@ body > div {
   color: var(--blanco);
 }
 
-.header_title{
+.header_title {
   color: #000;
   font-size: 1.5rem;
   text-align: center;
 }
-.nav-btn{
+
+.nav-btn {
   background-color: #FF6C00 !important;
-  border-color:transparent !important;
+  border-color: transparent !important;
 }
+
 .container {
   width: 100%;
   box-sizing: border-box;
@@ -105,9 +121,10 @@ body > div {
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   padding-bottom: 5rem;
-  padding-top:0rem;
+  padding-top: 0rem;
 }
-.grid-2 > .field {
+
+.grid-2>.field {
   min-width: 0;
 }
 
@@ -116,31 +133,40 @@ body > div {
   .container {
     grid-template-columns: 1fr;
   }
+
   .grid-2 {
     grid-template-columns: 1fr;
   }
 
-  .grid-2 > .field {
+  .grid-2>.field {
     width: 100%;
   }
+
   .header {
     text-align: center;
-    padding: 0.2rem 0rem;
-   
+    padding: 0rem 0rem;
+
   }
-  .header_title{
+
+  .header_title {
     padding-left: 1rem;
     font-size: 1.2rem;
   }
-  .subtitle{
+
+  .subtitle {
     padding: 0;
   }
-  .card{
+
+  .card {
     display: contents;
   }
 
+  .search-option {
+    display: none;
+  }
 }
-.subtitle{
+
+.subtitle {
   background-color: #0077b6;
   padding: 1rem;
   margin: 0 !important;
@@ -153,7 +179,7 @@ body > div {
   padding: 1rem 1.25rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
   margin-bottom: 1rem;
-  
+
 }
 
 .grid-2 {
@@ -288,33 +314,38 @@ th {
   width: 100%;
   padding: 1.5rem 1rem;
   color: var(--blanco);
-  
+
   background: #0077B6;
-  
+
 }
-.footer-content{
+
+.footer-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
   width: 100%;
-  
+
 }
-.footer-logo{
+
+.footer-logo {
   width: 100px;
   height: auto;
   border-radius: 100%;
 }
-.social-icons{
+
+.social-icons {
   display: flex;
   gap: 2;
   align-items: center;
 }
-.social-icons > a > img{
+
+.social-icons>a>img {
   width: 40px;
   padding: 0.2rem;
-  
+
 }
+
 @media (max-width:720px) {
   .grid-2 {
     grid-template-columns: 1fr
