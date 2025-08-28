@@ -50,9 +50,6 @@ El informe de verificación y validación está disponible como parte de la entr
 
 **Matías Ignacio Pérez Nauto**  
 Puerto Varas, Chile  
-Especialista en trazabilidad, validación técnica y hospitalidad digital.
+
 
 ---
-
-Este proyecto fue desarrollado con enfoque en modularidad, claridad visual y excelencia académica.  
-Para dudas o mejoras, puedes abrir un issue o contactar directamente.
