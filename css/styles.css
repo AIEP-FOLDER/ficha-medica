@@ -1,5 +1,5 @@
 :root {
-  --azul-clinico: #0077b6;
+  --azul-clinico: #058CB4;
   --azul-claro: #1A1C2C;
   --azul-intermedio: #1A1C2C;
   --gris: #6b7280;
@@ -31,14 +31,14 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   
-  color: #111827
+  color: #111827;
+  background: var(--blanco);
 }
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: 0;
-  background: radial-gradient(125% 125% at 50% 10%, #1A1C2C 40%, #6366f1 100%);
   pointer-events: none;
 }
 body > div {
@@ -46,9 +46,41 @@ body > div {
   z-index: 1;
 }
 
+.nav_principal{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: var(--azul-clinico);
+  color: white;
+  gap: 1rem;
+
+}
+.nav_principal >h1 {
+  margin: 0 !important;
+}
+.navbar-logo{
+  width: 50px;
+  border-radius: 100%;
+  
+}
+.search-btn{
+  background-color: transparent !important;
+  border: 0;
+  color: var(--azul-clinico);
+  cursor: pointer;
+}
+.search-option{
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 2rem;
+}
+
 .header {
   text-align: center;
-  padding: 1rem 0rem;
+  padding: 0rem 0rem;
   background: linear-gradient(to bottom, var(--azul-clinico), var(#1A1C2C));
   color: var(--blanco);
 }
@@ -56,8 +88,12 @@ body > div {
 .header_title{
   color: #000;
   font-size: 1.5rem;
+  text-align: center;
 }
-
+.nav-btn{
+  background-color: #FF6C00 !important;
+  border-color:transparent !important;
+}
 .container {
   width: 100%;
   box-sizing: border-box;
