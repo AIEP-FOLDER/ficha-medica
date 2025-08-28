@@ -17,15 +17,15 @@
     position: fixed;
     inset: 0;
     z-index: 0;
-    background: radial-gradient(125% 125% at 50% 10%, #1A1C2C 40%, #6366f1 100%);
+    background: #FFFFFF;
   "></div>
 
 
-<div style="min-height: 100vh; width: 100%; position: relative; z-index: 1;">
-    
+  <div class="div-main">
+
 
     <nav class="header">
-      <h1>Ficha Médica</h1>
+      <h1 class="header_title">Ficha Médica</h1>
       <p class="subtitle">Centro Clínico - Registro de Pacientes</p>
     </nav>
 
@@ -145,8 +145,28 @@
     </section>
 
     <footer class="footer">
-      <small>© 2025 Centro Clínico</small>
+      <div class="footer-content">
+        <img src="./assets/logo.jpg" alt="Logo Centro Clínico" class="footer-logo" />
+        
+
+
+        <small>© 2025 Centro Clínico</small>
+
+
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <img src="./assets/facebook.svg" alt="Facebook" />
+          </a>
+    
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+            <img src="./assets/instagram.svg" alt="Instagram" />
+          </a>
+        </div>
+
+        
+      </div>
     </footer>
+
 
     <script src="./js/app.js"></script>
 </body>
