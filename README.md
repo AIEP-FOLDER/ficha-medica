@@ -28,8 +28,10 @@ La aplicación está disponible públicamente en GitHub Pages:
 ```
 📁 ficha-medica/
 ├── index.html
-├── style.css
-├── script.js
+├── css/
+├──── style.css
+├── js/
+├──── app.js
 └── README.md
 ```
 
