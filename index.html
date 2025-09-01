@@ -57,39 +57,39 @@
           <div class="grid-2">
             <div class="field">
               <label for="rut">RUT*</label>
-              <input type="text" id="rut" placeholder="12.345.678-5" required>
+              <input type="text" id="rut" placeholder="12.345.678-5" required minlength="8" maxlength="12"> <!-- longitud minima de 8 considerando la gente de 9 millones que aún viven y máximo 12 considerando los puntos y guion -->
               <small class="error-msg" id="err-rut"></small>
             </div>
 
             <div class="field">
               <label for="nombres">Nombres*</label>
-              <input type="text" id="nombres" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Solo letras y espacios">
+              <input type="text" id="nombres" required minlength="3" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Solo letras y espacios"> <!-- Considere como nombre mínimo casos como Ana o Tom, los ciudadanos chinos tienen nombre de dos caracteres como dato -->
               <small class="error-msg" id="err-nombres"></small>
             </div>
 
             <div class="field">
               <label for="apellidos">Apellidos*</label>
-              <input type="text" id="apellidos" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+"
-                title="Solo letras y espacios">
+              <input type="text" id="apellidos" minlength="3" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+"
+                title="Solo letras y espacios"> <!-- Misma situación que los nombres-->
               <small class="error-msg" id="err-apellidos"></small>
             </div>
 
             <div class="field">
               <label for="direccion">Dirección*</label>
-              <input type="text" id="direccion" required>
+              <input type="text" id="direccion" required minlength="4"> <!-- Alguien puede poner que vive en Nos 1 -->
               <small class="error-msg" id="err-direccion"></small>
             </div>
 
             <div class="field">
               <label for="ciudad">Ciudad*</label>
-              <input type="text" id="ciudad" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Solo letras y espacios">
+              <input type="text" id="ciudad" required minlength="5" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Solo letras y espacios"> <!-- limite minimo de 5 porque son los nombres de ciudades con menos caracteres en chile ej: Arica-->
               <small class="error-msg" id="err-ciudad"></small>
             </div>
 
             <div class="field">
               <label for="telefono">Teléfono*</label>
               <input type="tel" id="telefono" inputmode="numeric" autocomplete="tel-national" placeholder="912345678"
-                required pattern="\d{8,}" title="Solo dígitos, mínimo 8">
+                required minlength="6" maxlength="11" pattern="\d{8,}" title="Solo dígitos, mínimo 6"> <!-- limite min de 6 por los teléfonos fijos que aún deben quedar y máx 11 conciderando los 8 números más 569 -->
               <small class="error-msg" id="err-telefono"></small>
             </div>
 
