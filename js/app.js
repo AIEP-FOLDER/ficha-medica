@@ -7,11 +7,62 @@ function sanitizeDigits(el){ el.value=(el.value||'').replace(/\D/g,''); }
 function pasteLettersSpaces(e){ e.preventDefault(); const t=(e.clipboardData||window.clipboardData).getData('text').replace(/[^a-zA-ZÀ-ÿ\s]/g,''); document.execCommand('insertText', false, t); }
 function pasteDigits(e){ e.preventDefault(); const t=(e.clipboardData||window.clipboardData).getData('text').replace(/\D/g,''); document.execCommand('insertText', false, t); }
 
+// verificación del rut obtenida del repositorio https://gist.github.com/gaulatti/69a24cc199a4253d058c
+
+function checkRut(rut) {
+    // Despejar Puntos
+    var valor = rut.value.replace('.','');
+    // Despejar Guión
+    valor = valor.replace('-','');
+    
+    // Aislar Cuerpo y Dígito Verificador
+    cuerpo = valor.slice(0,-1);
+    dv = valor.slice(-1).toUpperCase();
+    
+    // Formatear RUN
+    rut.value = cuerpo + '-'+ dv
+    
+    // Si no cumple con el mínimo ej. (n.nnn.nnn)
+    if(cuerpo.length < 7) { rut.setCustomValidity("RUT Incompleto"); return false;}
+    
+    // Calcular Dígito Verificador
+    suma = 0;
+    multiplo = 2;
+    
+    // Para cada dígito del Cuerpo
+    for(i=1;i<=cuerpo.length;i++) {
+    
+        // Obtener su Producto con el Múltiplo Correspondiente
+        index = multiplo * valor.charAt(cuerpo.length - i);
+        
+        // Sumar al Contador General
+        suma = suma + index;
+        
+        // Consolidar Múltiplo dentro del rango [2,7]
+        if(multiplo < 7) { multiplo = multiplo + 1; } else { multiplo = 2; }
+  
+    }
+    
+    // Calcular Dígito Verificador en base al Módulo 11
+    dvEsperado = 11 - (suma % 11);
+    
+    // Casos Especiales (0 y K)
+    dv = (dv == 'K')?10:dv;
+    dv = (dv == 0)?11:dv;
+    
+    // Validar que el Cuerpo coincide con su Dígito Verificador
+    if(dvEsperado != dv) { rut.setCustomValidity("RUT Inválido"); return false; }
+    
+    // Si todo sale bien, eliminar errores (decretar que es válido)
+    rut.setCustomValidity('');
+}
+
+
 // ===== RUT  =====
-const cleanRut = (rut) => (rut || '').toString().replace(/[^\dkK]/gi, '').toUpperCase();
-function dvModulo11(numStr){let sum=0,mul=2;for(let i=numStr.length-1;i>=0;i--){sum+=parseInt(numStr[i],10)*mul;mul=mul===7?2:mul+1;}const res=11-(sum%11);return res===11?'0':res===10?'K':String(res);}
-function validarRutValor(rutInput){const clean=cleanRut(rutInput);if(clean.length<2)return false;const body=clean.slice(0,-1);const dv=clean.slice(-1);if(!/^\d+$/.test(body))return false;return dvModulo11(body)===dv;}
-function formatRut(rut){const clean=cleanRut(rut);if(clean.length<2)return rut;const body=clean.slice(0,-1);const dv=clean.slice(-1);const withDots=body.replace(/\B(?=(\d{3})+(?!\d))/g,'.');return `${withDots}-${dv}`;}
+//const cleanRut = (rut) => (rut || '').toString().replace(/[^\dkK]/gi, '').toUpperCase();
+//function dvModulo11(numStr){let sum=0,mul=2;for(let i=numStr.length-1;i>=0;i--){sum+=parseInt(numStr[i],10)*mul;mul=mul===7?2:mul+1;}const res=11-(sum%11);return res===11?'0':res===10?'K':String(res);}
+//function validarRutValor(rutInput){const clean=cleanRut(rutInput);if(clean.length<2)return false;const body=clean.slice(0,-1);const dv=clean.slice(-1);if(!/^\d+$/.test(body))return false;return dvModulo11(body)===dv;}
+//function formatRut(rut){const clean=cleanRut(rut);if(clean.length<2)return rut;const body=clean.slice(0,-1);const dv=clean.slice(-1);const withDots=body.replace(/\B(?=(\d{3})+(?!\d))/g,'.');return `${withDots}-${dv}`;}
 
 // ===== Email =====
 function validarEmailValor(email){
