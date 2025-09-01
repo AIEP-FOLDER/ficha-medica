@@ -27,6 +27,14 @@ function validarEmailValor(email){
   return /^[A-Za-z]{2,}$/.test(tld);
 }
 
+// ===== Limitador de fecha de nacimiento agregado por Erick (01-09-20225) =====
+window.addEventListener('DOMContentLoaded', (evento) => {
+    
+    const hoy_fecha = new Date().toISOString().substring(0, 10);
+    document.querySelector("input[name='fechaNacimiento']").max = hoy_fecha;
+
+});
+
 // ===== Persistencia =====
 function getStore(){ try{return JSON.parse(localStorage.getItem('pacientes')||'{}');}catch{return{};} }
 function setStore(data){ localStorage.setItem('pacientes', JSON.stringify(data)); }
