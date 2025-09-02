@@ -23,7 +23,11 @@ function checkRut(rut) {
     rut.value = cuerpo + '-'+ dv
     
     // Si no cumple con el mínimo ej. (n.nnn.nnn)
-    if(cuerpo.length < 7) { rut.setCustomValidity("RUT Incompleto"); return false;}
+    if(cuerpo.length < 7) { 
+        rut.setCustomValidity("RUT Incompleto"); 
+        document.getElementById('err-rut').textContent = "RUT Incompleto";
+        return false;
+    }
     
     // Calcular Dígito Verificador
     suma = 0;
@@ -51,10 +55,15 @@ function checkRut(rut) {
     dv = (dv == 0)?11:dv;
     
     // Validar que el Cuerpo coincide con su Dígito Verificador
-    if(dvEsperado != dv) { rut.setCustomValidity("RUT Inválido"); return false; }
+    if(dvEsperado != dv) { 
+        rut.setCustomValidity("RUT Inválido"); 
+        document.getElementById('err-rut').textContent = "RUT Inválido. Ej: 12.345.678-5";
+        return false; 
+    }
     
     // Si todo sale bien, eliminar errores (decretar que es válido)
     rut.setCustomValidity('');
+    document.getElementById('err-rut').textContent = '';
 }
 
 

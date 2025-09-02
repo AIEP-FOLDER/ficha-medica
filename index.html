@@ -59,7 +59,7 @@
               <label for="rut">RUT*</label>
               <input type="text" id="rut" name="rut" required minlength="8" maxlength="12" oninput="checkRut(this)" placeholder="Ingrese RUT"> <!-- tecnicaménte al darle mandar deberia fallar o guardarse bien -->
              <!-- <input type="text" id="rut" placeholder="12.345.678-5" required minlength="8" maxlength="12"> <!-- longitud minima de 8 considerando la gente de 9 millones que aún viven y máximo 12 considerando los puntos y guion -->
-             <!--  <small class="error-msg" id="err-rut"></small>-->
+             <small class="error-msg" id="err-rut"></small>
             </div>
 
             <div class="field">
@@ -138,7 +138,7 @@
       <section class="card">
         <h2>Buscar por Apellido</h2>
         <div class="search">
-          <input type="text" id="buscarApellido" placeholder="Escribe un apellido…">
+          <input class="buscarApellido" type="text" id="buscarApellido" placeholder="Escribe un apellido…">
         </div>
         <div class="table-wrapper">
           <table id="resultados">
