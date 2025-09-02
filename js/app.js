@@ -58,11 +58,11 @@ function checkRut(rut) {
 }
 
 
-// ===== RUT  =====
-//const cleanRut = (rut) => (rut || '').toString().replace(/[^\dkK]/gi, '').toUpperCase();
-//function dvModulo11(numStr){let sum=0,mul=2;for(let i=numStr.length-1;i>=0;i--){sum+=parseInt(numStr[i],10)*mul;mul=mul===7?2:mul+1;}const res=11-(sum%11);return res===11?'0':res===10?'K':String(res);}
-//function validarRutValor(rutInput){const clean=cleanRut(rutInput);if(clean.length<2)return false;const body=clean.slice(0,-1);const dv=clean.slice(-1);if(!/^\d+$/.test(body))return false;return dvModulo11(body)===dv;}
-//function formatRut(rut){const clean=cleanRut(rut);if(clean.length<2)return rut;const body=clean.slice(0,-1);const dv=clean.slice(-1);const withDots=body.replace(/\B(?=(\d{3})+(?!\d))/g,'.');return `${withDots}-${dv}`;}
+// ===== RUT  ===== Rehabilité todas las funciones que había comentado
+const cleanRut = (rut) => (rut || '').toString().replace(/[^\dkK]/gi, '').toUpperCase();
+function dvModulo11(numStr){let sum=0,mul=2;for(let i=numStr.length-1;i>=0;i--){sum+=parseInt(numStr[i],10)*mul;mul=mul===7?2:mul+1;}const res=11-(sum%11);return res===11?'0':res===10?'K':String(res);}
+function validarRutValor(rutInput){const clean=cleanRut(rutInput);if(clean.length<2)return false;const body=clean.slice(0,-1);const dv=clean.slice(-1);if(!/^\d+$/.test(body))return false;return dvModulo11(body)===dv;}
+function formatRut(rut){const clean=cleanRut(rut);if(clean.length<2)return rut;const body=clean.slice(0,-1);const dv=clean.slice(-1);const withDots=body.replace(/\B(?=(\d{3})+(?!\d))/g,'.');return `${withDots}-${dv}`;}
 
 // ===== Email =====
 function validarEmailValor(email){
