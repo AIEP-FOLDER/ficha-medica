@@ -228,4 +228,26 @@ document.addEventListener('DOMContentLoaded',()=>{
     closed?.setAttribute('hidden','');
     app?.removeAttribute('hidden');
   });
+
+  // 6) Clear error messages on reset
+  const form = document.getElementById('fichaForm');
+  form?.addEventListener('reset', () => {
+    const ids=['rut','nombres','apellidos','direccion','ciudad','telefono','email','fechaNacimiento','estadoCivil','comentarios'];
+    ids.forEach(id => {
+      const el = document.getElementById(id);
+      const errEl = document.getElementById(`err-${id}`);
+      if (errEl) errEl.textContent = '';
+      if (el) {
+        el.classList.remove('invalid');
+        el.classList.remove('valid');
+      }
+    });
+
+    // Clear main message
+    const msg = document.getElementById('msg');
+    if (msg) {
+      msg.className = 'msg';
+      msg.textContent = '';
+    }
+  });
 });
